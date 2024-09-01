@@ -1,89 +1,73 @@
 /* General body styling */
 body {
     margin: 0;
-    font-family: 'Times New Roman', serif;
-    background: url('https://t3.ftcdn.net/jpg/00/46/44/02/360_F_46440268_HxTMxCec1EntidRNV0mrw1wMDtMcYk8g.jpg') no-repeat center center fixed;
+    font-family: Arial, sans-serif;
+    background-image: url('https://media.istockphoto.com/id/1197239452/photo/fern-leaves-on-dark-background-in-jungle-dense-dark-green-fern-leaves-in-garden-at-night.jpg?s=612x612&w=0&k=20&c=-fT1-Y4drWnWrxQRYAnUJAKvVfuQa55Iput1dhTBnL4=');
     background-size: cover;
-    color: white;
-    text-align: center;
-}
-
-/* Container to center the profile box */
-.container {
-    position: relative;
-    width: 100%;
+    background-position: center;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #333;
 }
 
-/* Profile box styling */
-.profile-box {
-    background: black;
-    color: white;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Container styling */
+#container {
+    background-color: #f0e68c; /* light khaki */
+    width: 60%;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
 }
 
 /* Tabs styling */
-.tabs {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: transparent;
-    padding: 10px;
+#tabs {
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
-    z-index: 1000;
+    gap: 20px;
 }
 
-.tabs a {
-    color: black;
-    background: white;
-    text-decoration: none;
+.tab {
     padding: 10px 20px;
-    font-size: 18px;
-    border: 2px solid black;
-    margin: 0 5px;
-    display: inline-block;
+    cursor: pointer;
+    background-color: white;
     border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-.tabs a:hover {
-    background: black;
-    color: white;
+.tab:hover {
+    background-color: #e0e0e0;
 }
 
 /* Content sections styling */
 .content {
     display: none;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-top: 50px;
-    text-align: left;
-    color: black;
 }
 
-.active {
+.content.active {
     display: block;
 }
 
-/* Contact links styling */
-.contact a {
-    color: blue;
-    text-decoration: none;
-    display: block;
+/* Unordered list styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
     margin: 10px 0;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
 }
