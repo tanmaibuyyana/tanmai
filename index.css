@@ -5,6 +5,7 @@ body {
     background-image: url('https://media.istockphoto.com/id/1197239452/photo/fern-leaves-on-dark-background-in-jungle-dense-dark-green-fern-leaves-in-garden-at-night.jpg?s=612x612&w=0&k=20&c=-fT1-Y4drWnWrxQRYAnUJAKvVfuQa55Iput1dhTBnL4=');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,38 +15,46 @@ body {
 
 /* Container styling */
 #container {
-    background-color: #f0e68c; /* light khaki */
-    width: 60%;
+    background-color: white;
+    width: 350px;
+    height: 350px;
     padding: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 50%;
     text-align: center;
+    position: relative;
 }
 
 /* Tabs styling */
 #tabs {
-    margin-bottom: 20px;
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
 }
 
 .tab {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #004d00; /* dark green */
+    color: white;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
 .tab:hover {
-    background-color: #e0e0e0;
+    background-color: #006400; /* slightly lighter dark green */
 }
 
 /* Content sections styling */
 .content {
     display: none;
+    margin-top: 30px;
 }
 
 .content.active {
@@ -65,7 +74,7 @@ ul li {
 /* Link styling */
 a {
     text-decoration: none;
-    color: blue;
+    color: #004d00; /* dark green */
 }
 
 a:hover {
