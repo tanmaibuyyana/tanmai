@@ -4,120 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Introduction</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Times New Roman', Times, serif;
-            background-image: url('https://media.istockphoto.com/id/1197239452/photo/fern-leaves-on-dark-background-in-jungle-dense-dark-green-fern-leaves-in-garden-at-night.jpg?s=612x612&w=0&k=20&c=-fT1-Y4drWnWrxQRYAnUJAKvVfuQa55Iput1dhTBnL4=');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-        }
-
-        #container {
-            background-color: white;
-            width: 400px;
-            padding: 20px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-        }
-
-        #tabs {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .tab {
-            flex: 1;
-            padding: 10px;
-            cursor: pointer;
-            background-color: black;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            margin: 0 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .tab:hover {
-            background-color: #444;
-        }
-
-        .content {
-            display: none;
-        }
-
-        .content.active {
-            display: block;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="container">
-        <div id="tabs">
-            <div class="tab" onclick="showContent('aboutMe')">About Me</div>
-            <div class="tab" onclick="showContent('projects')">Personal Projects</div>
-            <div class="tab" onclick="showContent('contact')">Contact Information</div>
-        </div>
-
-        <div id="aboutMe" class="content active">
+        <div id="aboutMe" class="box">
             <h1>About Me</h1>
-            <p>Hello! I'm a sophomore at Texas A&M University, studying [Your Major]. I have a passion for [Your Passion or Hobby].</p>
+            <p>Brief self introduction goes here.</p>
         </div>
-
-        <div id="projects" class="content">
+        <div id="projects" class="box">
             <h1>Personal Projects</h1>
-            <ul>
-                <li><strong>Project 1:</strong> A description of your first project.</li>
-                <li><strong>Project 2:</strong> A description of your second project.</li>
-                <li><strong>Project 3:</strong> A description of your third project.</li>
-            </ul>
         </div>
-
-        <div id="contact" class="content">
+        <div id="contact" class="box">
             <h1>Contact Information</h1>
-            <ul>
-                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></li>
-                <li>GitHub: <a href="https://github.com/yourusername" target="_blank">Your GitHub</a></li>
-            </ul>
         </div>
     </div>
 
+    <!-- Expanded Content for Projects -->
+    <div id="projectsExpanded" class="expanded-content">
+        <button class="return-btn" onclick="returnToHome()">Return</button>
+        <h1>Personal Projects</h1>
+        <ul>
+            <li><strong>Project 1:</strong> A description of your first project.</li>
+            <li><strong>Project 2:</strong> A description of your second project.</li>
+            <li><strong>Project 3:</strong> A description of your third project.</li>
+        </ul>
+    </div>
+
+    <!-- Expanded Content for Contact Information -->
+    <div id="contactExpanded" class="expanded-content">
+        <button class="return-btn" onclick="returnToHome()">Return</button>
+        <h1>Contact Information</h1>
+        <ul>
+            <li><a href="mailto:your.email@example.com"><img src="gmail-icon.png" alt="Gmail"> Gmail</a></li>
+            <li><a href="https://www.instagram.com/yourprofile" target="_blank"><img src="instagram-icon.png" alt="Instagram"> Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"> LinkedIn</a></li>
+        </ul>
+    </div>
+
     <script>
-        function showContent(contentId) {
-            var contents = document.getElementsByClassName('content');
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].classList.remove('active');
-            }
-            document.getElementById(contentId).classList.add('active');
+        document.getElementById('projects').addEventListener('click', function() {
+            document.getElementById('container').style.display = 'none';
+            document.getElementById('projectsExpanded').style.display = 'block';
+        });
+
+        document.getElementById('contact').addEventListener('click', function() {
+            document.getElementById('container').style.display = 'none';
+            document.getElementById('contactExpanded').style.display = 'block';
+        });
+
+        function returnToHome() {
+            document.getElementById('projectsExpanded').style.display = 'none';
+            document.getElementById('contactExpanded').style.display = 'none';
+            document.getElementById('container').style.display = 'flex';
         }
     </script>
 </body>
