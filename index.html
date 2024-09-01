@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             background-image: url('https://media.istockphoto.com/id/1197239452/photo/fern-leaves-on-dark-background-in-jungle-dense-dark-green-fern-leaves-in-garden-at-night.jpg?s=612x612&w=0&k=20&c=-fT1-Y4drWnWrxQRYAnUJAKvVfuQa55Iput1dhTBnL4=');
             background-size: cover;
             background-position: center;
@@ -21,43 +21,38 @@
 
         #container {
             background-color: white;
-            width: 350px;
-            height: 350px;
+            width: 400px;
             padding: 20px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
+            border-radius: 15px;
             text-align: center;
             position: relative;
         }
 
         #tabs {
-            margin-top: 20px;
             display: flex;
-            justify-content: space-around;
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            left: 0;
-            right: 0;
-            padding: 0 20px;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
 
         .tab {
-            padding: 10px 20px;
+            flex: 1;
+            padding: 10px;
             cursor: pointer;
-            background-color: #004d00; /* dark green */
+            background-color: black;
             color: white;
-            border-radius: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 0 5px;
             transition: background-color 0.3s ease;
         }
 
         .tab:hover {
-            background-color: #006400; /* slightly lighter dark green */
+            background-color: #444;
         }
 
         .content {
             display: none;
-            margin-top: 30px;
         }
 
         .content.active {
@@ -75,7 +70,7 @@
 
         a {
             text-decoration: none;
-            color: #004d00; /* dark green */
+            color: black;
         }
 
         a:hover {
@@ -86,6 +81,12 @@
 <body>
 
     <div id="container">
+        <div id="tabs">
+            <div class="tab" onclick="showContent('aboutMe')">About Me</div>
+            <div class="tab" onclick="showContent('projects')">Personal Projects</div>
+            <div class="tab" onclick="showContent('contact')">Contact Information</div>
+        </div>
+
         <div id="aboutMe" class="content active">
             <h1>About Me</h1>
             <p>Hello! I'm a sophomore at Texas A&M University, studying [Your Major]. I have a passion for [Your Passion or Hobby].</p>
@@ -107,12 +108,6 @@
                 <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></li>
                 <li>GitHub: <a href="https://github.com/yourusername" target="_blank">Your GitHub</a></li>
             </ul>
-        </div>
-
-        <div id="tabs">
-            <div class="tab" onclick="showContent('aboutMe')">About Me</div>
-            <div class="tab" onclick="showContent('projects')">Personal Projects</div>
-            <div class="tab" onclick="showContent('contact')">Contact Information</div>
         </div>
     </div>
 
