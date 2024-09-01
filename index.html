@@ -3,129 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Introduction - Texas A&M University</title>
+    <title>Personal Introduction</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Times New Roman', serif;
-            background: url('https://t3.ftcdn.net/jpg/00/46/44/02/360_F_46440268_HxTMxCec1EntidRNV0mrw1wMDtMcYk8g.jpg') no-repeat center center fixed;
+            font-family: Arial, sans-serif;
+            background-image: url('https://media.istockphoto.com/id/1197239452/photo/fern-leaves-on-dark-background-in-jungle-dense-dark-green-fern-leaves-in-garden-at-night.jpg?s=612x612&w=0&k=20&c=-fT1-Y4drWnWrxQRYAnUJAKvVfuQa55Iput1dhTBnL4=');
             background-size: cover;
-            color: white;
-            text-align: center;
-        }
-        .container {
-            position: relative;
-            width: 100%;
+            background-position: center;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #333;
         }
-        .profile-box {
-            background: black;
-            color: white;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+
+        #container {
+            background-color: #f0e68c; /* light khaki */
+            width: 60%;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            text-align: center;
         }
-        .tabs {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: transparent;
-            padding: 10px;
+
+        #tabs {
+            margin-bottom: 20px;
             display: flex;
             justify-content: center;
-            z-index: 1000;
+            gap: 20px;
         }
-        .tabs a {
-            color: black;
-            background: white;
-            text-decoration: none;
+
+        .tab {
             padding: 10px 20px;
-            font-size: 18px;
-            border: 2px solid black;
-            margin: 0 5px;
-            display: inline-block;
+            cursor: pointer;
+            background-color: white;
             border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
-        .tabs a:hover {
-            background: black;
-            color: white;
+
+        .tab:hover {
+            background-color: #e0e0e0;
         }
+
         .content {
             display: none;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            margin-top: 50px;
-            text-align: left;
-            color: black;
         }
-        .active {
+
+        .content.active {
             display: block;
         }
-        .contact a {
-            color: blue;
-            text-decoration: none;
-            display: block;
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
             margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="tabs">
-        <a href="#personal-projects" onclick="showContent('projects')">Personal Projects</a>
-        <a href="#contact-info" onclick="showContent('contact')">Contact Information</a>
-    </div>
-    
-    <div class="container">
-        <div class="profile-box" id="about-me">
-            <div>
-                <h1>Welcome!</h1>
-                <p>Hi, I'm a sophomore at Texas A&M University. Click on the tabs above to learn more about my personal projects and how to contact me.</p>
-            </div>
+
+    <div id="container">
+        <div id="tabs">
+            <div class="tab" onclick="showContent('aboutMe')">About Me</div>
+            <div class="tab" onclick="showContent('projects')">Personal Projects</div>
+            <div class="tab" onclick="showContent('contact')">Contact Information</div>
         </div>
-    </div>
-    
-    <div id="personal-projects" class="content">
-        <h2>Personal Projects</h2>
-        <ul>
-            <li>
-                <h3>Project 1</h3>
-                <p>A short description of Project 1.</p>
-            </li>
-            <li>
-                <h3>Project 2</h3>
-                <p>A short description of Project 2.</p>
-            </li>
-            <!-- Add more projects here -->
-        </ul>
-    </div>
-    
-    <div id="contact-info" class="content contact">
-        <h2>Contact Information</h2>
-        <a href="mailto:your.email@example.com">Email</a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <!-- Add more contact methods here -->
+
+        <div id="aboutMe" class="content active">
+            <h1>About Me</h1>
+            <p>Hello! I'm a sophomore at Texas A&M University, studying [Your Major]. I have a passion for [Your Passion or Hobby].</p>
+        </div>
+
+        <div id="projects" class="content">
+            <h1>Personal Projects</h1>
+            <ul>
+                <li><strong>Project 1:</strong> A description of your first project.</li>
+                <li><strong>Project 2:</strong> A description of your second project.</li>
+                <li><strong>Project 3:</strong> A description of your third project.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="content">
+            <h1>Contact Information</h1>
+            <ul>
+                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></li>
+                <li>GitHub: <a href="https://github.com/yourusername" target="_blank">Your GitHub</a></li>
+            </ul>
+        </div>
     </div>
 
     <script>
-        function showContent(sectionId) {
-            document.querySelectorAll('.content').forEach(function(el) {
-                el.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
+        function showContent(contentId) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            document.getElementById(contentId).classList.add('active');
         }
     </script>
 </body>
