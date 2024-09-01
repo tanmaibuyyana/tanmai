@@ -3,54 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Howdy!</title>
+    <title>Personal Introduction</title>
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: ##FFC0CB;
-            color: #333;
+            background: repeating-linear-gradient(
+                90deg,
+                black,
+                black 10px,
+                white 10px,
+                white 20px
+            );
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
-        .container {
-            background-color: #fff;
+
+        #container {
+            background-color: lightpink;
+            width: 60%;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
             text-align: center;
-            max-width: 400px;
         }
-        h1 {
+
+        #tabs {
             margin-bottom: 20px;
-            font-size: 2em;
-            color: #444;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            line-height: 1.5;
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
-        .contact-info {
-            font-size: 1em;
-            color: #555;
+
+        .tab:hover {
+            background-color: #f0f0f0;
         }
-        .contact-info a {
-            color: #007bff;
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        a {
             text-decoration: none;
+            color: blue;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Howdy!</h1>
-        <p>Hello! I am Tanmai, a sophomore at Texas A&M University. Welcome to my personal website!</p>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:your.email@example.com">tanbuyyana04@tamu.edu</a></p>
-            <p>Phone: <a href="tel:+1234567890">6823301220</a></p>
+
+    <div id="container">
+        <div id="tabs">
+            <div class="tab" onclick="showContent('aboutMe')">About Me</div>
+            <div class="tab" onclick="showContent('projects')">Personal Projects</div>
+            <div class="tab" onclick="showContent('contact')">Contact Information</div>
+        </div>
+
+        <div id="aboutMe" class="content active">
+            <h1>About Me</h1>
+            <p>Hello! I'm a sophomore at Texas A&M University, studying [Your Major]. I have a passion for [Your Passion or Hobby].</p>
+        </div>
+
+        <div id="projects" class="content">
+            <h1>Personal Projects</h1>
+            <ul>
+                <li><strong>Project 1:</strong> A description of your first project.</li>
+                <li><strong>Project 2:</strong> A description of your second project.</li>
+                <li><strong>Project 3:</strong> A description of your third project.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="content">
+            <h1>Contact Information</h1>
+            <ul>
+                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></li>
+                <li>GitHub: <a href="https://github.com/yourusername" target="_blank">Your GitHub</a></li>
+            </ul>
         </div>
     </div>
+
+    <script>
+        function showContent(contentId) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            document.getElementById(contentId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
