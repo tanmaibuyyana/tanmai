@@ -2,58 +2,72 @@
 body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
-    background-image: url('https://media.istockphoto.com/id/1197239452/photo/fern-leaves-on-dark-background-in-jungle-dense-dark-green-fern-leaves-in-garden-at-night.jpg?s=612x612&w=0&k=20&c=-fT1-Y4drWnWrxQRYAnUJAKvVfuQa55Iput1dhTBnL4=');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #3b2f2f; /* Dark brown background */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
+    color: #3b2f2f; /* Dark brown text color */
 }
 
-/* Container styling */
+/* Container for the three boxes */
 #container {
-    background-color: white;
-    width: 400px;
-    padding: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    text-align: center;
-    position: relative;
-}
-
-/* Tabs styling */
-#tabs {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    width: 600px;
+    height: 300px;
 }
 
-.tab {
-    flex: 1;
-    padding: 10px;
+/* Box styling */
+.box {
+    background-color: #b89b77; /* Light brown color */
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     cursor: pointer;
+    color: #3b2f2f; /* Dark brown text color */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for boxes */
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Expanded content styling */
+.expanded-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #b89b77; /* Light brown color */
+    color: #3b2f2f; /* Dark brown text color */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Return button styling */
+.return-btn {
     background-color: black;
     color: white;
-    text-align: center;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
-.tab:hover {
+.return-btn:hover {
     background-color: #444;
-}
-
-/* Content sections styling */
-.content {
-    display: none;
-}
-
-.content.active {
-    display: block;
 }
 
 /* Unordered list styling */
@@ -63,15 +77,23 @@ ul {
 }
 
 ul li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 /* Link styling */
 a {
     text-decoration: none;
-    color: black;
+    color: #3b2f2f; /* Dark brown text color */
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Icons styling */
+img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
