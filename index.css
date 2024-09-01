@@ -2,72 +2,66 @@
 body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #3b2f2f; /* Dark brown background */
+    background-image: url('https://t3.ftcdn.net/jpg/00/46/44/02/360_F_46440268_HxTMxCec1EntidRNV0mrw1wMDtMcYk8g.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #3b2f2f; /* Dark brown text color */
+    color: #fff; /* White text color */
 }
 
-/* Container for the three boxes */
+/* Container styling */
 #container {
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Tabs styling */
+#tabs {
     display: flex;
-    justify-content: space-between;
-    width: 600px;
-    height: 300px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #444;
+}
+
+/* Content sections styling */
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
 }
 
 /* Box styling */
 .box {
-    background-color: #b89b77; /* Light brown color */
-    width: 200px;
-    height: 200px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    color: #3b2f2f; /* Dark brown text color */
-    transition: transform 0.3s ease;
-}
-
-/* Hover effect for boxes */
-.box:hover {
-    transform: scale(1.05);
-}
-
-/* Expanded content styling */
-.expanded-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #b89b77; /* Light brown color */
-    color: #3b2f2f; /* Dark brown text color */
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* Return button styling */
-.return-btn {
     background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.return-btn:hover {
-    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff; /* White text color */
 }
 
 /* Unordered list styling */
@@ -77,23 +71,15 @@ ul {
 }
 
 ul li {
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 /* Link styling */
 a {
     text-decoration: none;
-    color: #3b2f2f; /* Dark brown text color */
+    color: #ffcc00; /* Highlight color for links */
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-/* Icons styling */
-img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-right: 10px;
 }
