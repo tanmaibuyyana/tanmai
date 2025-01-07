@@ -41,14 +41,14 @@ body {
 .tab {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #004d00; /* dark green */
+    background-color: #FFB6C1; /* dark green */
     color: white;
     border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
 .tab:hover {
-    background-color: #006400; /* slightly lighter dark green */
+    background-color: #C11C84; /* slightly lighter dark green */
 }
 
 /* Content sections styling */
@@ -74,7 +74,7 @@ ul li {
 /* Link styling */
 a {
     text-decoration: none;
-    color: #004d00; /* dark green */
+    color: #FFB6C1; /* dark green */
 }
 
 a:hover {
