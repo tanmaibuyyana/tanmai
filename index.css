@@ -1,82 +1,141 @@
-/* General body styling */
+/* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #C11C84;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: black;
 }
 
-/* Container styling */
-#container {
-    background-color: white;
-    width: 850px;
-    height: 650px;
-    padding: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    text-align: center;
-    position: relative;
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
-/* Tabs styling */
-#tabs {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    padding: 0 20px;
+.hidden {
+  display: none;
+}
+
+/* First Screen Styles */
+#first-screen {
+  background: linear-gradient(to bottom, #d6336c 50%, #f8bbd0 50%);
+}
+
+.top-half {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.top-half h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.top-half h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.bottom-half {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-button {
+  background-color: #d6336c;
+  color: black;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Home Screen Styles */
+#home-screen {
+  background-color: #d6336c;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #FFB6C1; /* dark green */
-    color: white;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
+  background-color: #f8bbd0;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
 }
 
-.tab:hover {
-    background-color: #C11C84; /* slightly lighter dark green */
+.home-content {
+  margin-top: 50px;
 }
 
-/* Content sections styling */
-.content {
-    display: none;
-    margin-top: 30px;
+.message-box {
+  background-color: #f8bbd0;
+  padding: 20px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.content.active {
-    display: block;
+/* Projects, About, and Contact Screens Styles */
+#projects-screen,
+#about-screen,
+#contact-screen {
+  background-color: #f8bbd0;
 }
 
-/* Unordered list styling */
-ul {
-    list-style-type: none;
-    padding: 0;
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #d6336c;
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-ul li {
-    margin: 10px 0;
+.content-box {
+  background-color: #d6336c;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 600px;
+  text-align: center;
 }
 
-/* Link styling */
-a {
-    text-decoration: none;
-    color: #FFB6C1; /* dark green */
+.content-box h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-a:hover {
-    text-decoration: underline;
+.content-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content-box ul li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.content-box p {
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
