@@ -5,20 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanmai's Personal Website!</title>
     <style>
+        /* General Styles */
         body {
             margin: 0;
             font-family: Times New Roman, sans-serif;
-            background-color: #C11C84;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: black; /* Starting screen background */
             height: 100vh;
+            overflow: hidden; /* Prevent scrolling during animation */
+        }
+
+        /* Starting Screen */
+        #starting-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333;
+            z-index: 1000; /* Ensure it's on top */
+            transition: transform 2s ease-in-out; /* Slower animation */
         }
 
+        /* Power Button */
+        #power-button {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Power Symbol */
+        #power-button::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 4px solid white;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #power-button::after {
+            content: "";
+            width: 4px;
+            height: 20px;
+            background-color: white;
+            position: absolute;
+            top: 10px;
+        }
+
+        /* Main Container */
         #container {
             background-color: #FFB6C1; /* light pink */
             width: 850px;
@@ -28,8 +71,12 @@
             border-radius: 20px; /* rectangle with rounded corners */
             text-align: center;
             position: relative;
+            margin: 0 auto;
+            transform: translateY(100%); /* Start off-screen */
+            transition: transform 2s ease-in-out; /* Slower animation */
         }
 
+        /* Back Button */
         #back-button {
             position: absolute;
             top: 20px;
@@ -46,6 +93,7 @@
             cursor: pointer;
         }
 
+        /* Tabs */
         #tabs {
             margin-top: 20px;
             display: flex;
@@ -101,6 +149,12 @@
 </head>
 <body>
 
+    <!-- Starting Screen -->
+    <div id="starting-screen">
+        <div id="power-button" onclick="startAnimation()"></div>
+    </div>
+
+    <!-- Main Content -->
     <div id="container">
         <!-- Back Button -->
         <div id="back-button" onclick="showContent('start')">←</div>
@@ -167,6 +221,24 @@
     </div>
 
     <script>
+        // Function to start the animation
+        function startAnimation() {
+            const startingScreen = document.getElementById('starting-screen');
+            const container = document.getElementById('container');
+
+            // Slide up the starting screen
+            startingScreen.style.transform = 'translateY(-100%)';
+
+            // Slide up the main container
+            container.style.transform = 'translateY(0)';
+
+            // Hide the starting screen after animation
+            setTimeout(() => {
+                startingScreen.style.display = 'none';
+            }, 2000); // Match the duration of the CSS transition (2 seconds)
+        }
+
+        // Function to show content
         function showContent(contentId) {
             var contents = document.getElementsByClassName('content');
             for (var i = 0; i < contents.length; i++) {
