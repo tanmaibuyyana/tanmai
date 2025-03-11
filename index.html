@@ -64,14 +64,12 @@
         /* Main Container */
         #container {
             background-color: #FFB6C1; /* light pink */
-            width: 850px;
-            height: 650px;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
             padding: 20px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-            border-radius: 20px; /* rectangle with rounded corners */
             text-align: center;
             position: relative;
-            margin: 0 auto;
             transform: translateY(100%); /* Start off-screen */
             transition: transform 2s ease-in-out; /* Slower animation */
         }
@@ -95,30 +93,31 @@
 
         /* Tabs */
         #tabs {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-around;
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
+            position: fixed; /* Fixed positioning */
+            bottom: 20px; /* Position at the bottom */
             left: 0;
             right: 0;
+            display: flex;
+            justify-content: space-around;
             padding: 0 20px;
+            z-index: 100; /* Ensure tabs are above other content */
         }
 
         .tab {
             padding: 10px 20px;
             cursor: pointer;
-            background-color: #FFB6C1; /* light pink */
+            background-color: #C11C84; /* dark pink */
             color: white;
             border-radius: 20px;
             transition: background-color 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .tab:hover {
-            background-color: #C11C84; /* dark pink */
+            background-color: #FFB6C1; /* light pink */
         }
 
+        /* Content Sections */
         .content {
             display: none;
             margin-top: 30px;
@@ -157,4 +156,95 @@
     <!-- Main Content -->
     <div id="container">
         <!-- Back Button -->
-        <div id="back-button" onclick="showContent('
+        <div id="back-button" onclick="showContent('start')">←</div>
+
+        <!-- Start Screen -->
+        <div id="start" class="content active">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Welcome to My Website!</h1>
+            <p>Click on the tabs below to learn more about me!</p>
+        </div>
+
+        <!-- About Me Screen -->
+        <div id="aboutMe" class="content">
+            <h1>About Me</h1>
+            <br>
+            <br>
+            <br>
+            <p>Hello! My name is Tanmai Buyyanapragada and I am a sophomore Electronics Major at Texas A&M University. I am currently looking for an internship over the summer. I would love to learn more about both the software and hardware worlds, both being huge interests of mine. From a young age, I was exposed to the programming world. This interest really started when I was just 5 years old. I still remember the pride I felt staring at the "Hello, World!" that I had just printed on the screen. I was amazed. From that day on, I knew that programming was something I wanted to explore. It wasn't until our blender broke that I realized how amazing hardware was, too. My dad and I took the blender apart, looking at the different components. I was so surprised at how complex the simple machine really was. It completely changed my perspective, changing the way I saw the world. I realized that electrical engineering, a mix of both worlds, was the perfect major for me!</p>
+            <br>
+            <p>Feel free to click on the tabs below to learn more about me! Welcome to my personal website!</p>
+        </div>
+
+        <!-- Projects Screen -->
+        <div id="projects" class="content">
+            <h1>Personal Projects</h1>
+            <ul>
+                <li><strong>Project 1 - Thermostat:</strong> I used Arduino systems to build this thermostat. The basic components were an LCD screen to display the output, a thermistor, a simple program to run, and a breadboard-based wiring system. After completing the circuit, the temperature is returned in Celsius.</li>
+                <br>
+                <li><strong>Project 2 - Spinning Toy:</strong> This project was one of my favorites because I was able to gift it to my nephew and because it used objects from around the house. Using copper wires, recycled cardboard, an electric toothbrush, hot glue, and some paper, I was able to repurpose the motor in the electric toothbrush and create a little monkey toy that could spin on its base when a switch is turned on to run the motor.</li>
+                <br>
+                <li><strong>Project 3 - Light with Light Switch:</strong> This was one of my easier projects because there was no software programming needed. I used a LED light bulb, wires, a breadboard, a resistor, and a push button switch. This result is pretty self-explanatory, the final circuit being a light that turned on an off as a result of a switch being pushed.</li>
+                <br>
+                <li><strong>Project 4 - My Personal Website:</strong> Times are changing, and so are resumes. That was why I decided to make this website. I used HTML, CSS, and a little bit of Javascript in order to create this aesthetically pleasing website. It is like my digital portfolio, and I will keep improving it.</li>
+                <br>
+                <li><strong>Project 5 - Meta Tic-Tac-Toe:</strong> This project is pretty self explanatory. I used Python to create a Meta Tic-Tac-Toe game, a game where 9 different Tic-Tac-Toe games are played at once. I am currently in the process of remaking this game in the language I am learning right now, C++.</li>
+            </ul>
+        </div>
+
+        <!-- Contact Screen -->
+        <div id="contact" class="content">
+            <br>
+            <br>
+            <h1>Contact Information</h1>
+            <ul>
+                <br>
+                <br>
+                <li>Email: <a href="mailto:tanbuyyana04@tamu.edu">tanbuyyana04@tamu.edu</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/tanmaibuyyana" target="_blank">My LinkedIn</a></li>
+                <li><strong>Phone Number:</strong>(682)-330-1220</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div id="tabs">
+        <div class="tab" onclick="showContent('aboutMe')">About Me</div>
+        <div class="tab" onclick="showContent('projects')">Personal Projects</div>
+        <div class="tab" onclick="showContent('contact')">Contact Information</div>
+    </div>
+
+    <script>
+        // Function to start the animation
+        function startAnimation() {
+            const startingScreen = document.getElementById('starting-screen');
+            const container = document.getElementById('container');
+
+            // Slide up the starting screen
+            startingScreen.style.transform = 'translateY(-100%)';
+
+            // Slide up the main container
+            container.style.transform = 'translateY(0)';
+
+            // Hide the starting screen after animation
+            setTimeout(() => {
+                startingScreen.style.display = 'none';
+            }, 2000); // Match the duration of the CSS transition (2 seconds)
+        }
+
+        // Function to show content
+        function showContent(contentId) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            document.getElementById(contentId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
