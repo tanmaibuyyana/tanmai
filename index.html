@@ -9,7 +9,7 @@
         body {
             margin: 0;
             font-family: Times New Roman, sans-serif;
-            background-color: black; /* Starting screen background */
+            background-color: #C11C84; /* Starting screen background */
             height: 100vh;
             overflow: hidden; /* Prevent scrolling during animation */
         }
@@ -21,7 +21,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #C11C84; /* Dark pink */
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -64,12 +64,14 @@
         /* Main Container */
         #container {
             background-color: #FFB6C1; /* light pink */
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
+            width: 850px;
+            height: 650px;
             padding: 20px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 20px; /* rectangle with rounded corners */
             text-align: center;
             position: relative;
+            margin: 0 auto;
             transform: translateY(100%); /* Start off-screen */
             transition: transform 2s ease-in-out; /* Slower animation */
         }
@@ -93,34 +95,30 @@
 
         /* Tabs */
         #tabs {
-            position: fixed; /* Fixed positioning */
-            bottom: 20px; /* Position at the bottom */
-            left: 0;
-            right: 0;
+            margin-top: 20px;
             display: flex;
             justify-content: space-around;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            left: 0;
+            right: 0;
             padding: 0 20px;
-            z-index: 100; /* Ensure tabs are above other content */
         }
 
         .tab {
-            padding: 10px 20px; /* Consistent padding */
+            padding: 10px 20px;
             cursor: pointer;
-            background-color: #C11C84; /* dark pink */
+            background-color: #C11C84;
             color: white;
             border-radius: 20px;
             transition: background-color 0.3s ease;
-            font-size: 1.2rem;
-            flex: 1; /* Distribute space evenly */
-            text-align: center; /* Center text */
-            margin: 0 5px; /* Add spacing between tabs */
         }
 
         .tab:hover {
-            background-color: #FFB6C1; /* light pink */
+            background-color: black; /* light pink #FFB6C1 */
         }
 
-        /* Content Sections */
         .content {
             display: none;
             margin-top: 30px;
@@ -213,13 +211,13 @@
                 <li><strong>Phone Number:</strong>(682)-330-1220</li>
             </ul>
         </div>
-    </div>
 
-    <!-- Tabs -->
-    <div id="tabs">
-        <div class="tab" onclick="showContent('aboutMe')">About Me</div>
-        <div class="tab" onclick="showContent('projects')">Personal Projects</div>
-        <div class="tab" onclick="showContent('contact')">Contact Information</div>
+        <!-- Tabs -->
+        <div id="tabs">
+            <div class="tab" onclick="showContent('aboutMe')">About Me</div>
+            <div class="tab" onclick="showContent('projects')">Personal Projects</div>
+            <div class="tab" onclick="showContent('contact')">Contact Information</div>
+        </div>
     </div>
 
     <script>
@@ -251,3 +249,4 @@
     </script>
 </body>
 </html>
+
