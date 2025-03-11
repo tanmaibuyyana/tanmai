@@ -157,7 +157,7 @@
     <!-- Main Content -->
     <div id="container">
         <!-- Back Button -->
-        <div id="back-button" onclick="showContent('start')">←</div>
+        <div id="back-button" onclick="goBackToStartScreen()">←</div>
 
         <!-- Start Screen -->
         <div id="start" class="content active">
@@ -245,6 +245,22 @@
                 contents[i].classList.remove('active');
             }
             document.getElementById(contentId).classList.add('active');
+        }
+
+        // Function to go back to the starting screen
+        function goBackToStartScreen() {
+            const startingScreen = document.getElementById('starting-screen');
+            const container = document.getElementById('container');
+
+            // Slide down the main container
+            container.style.transform = 'translateY(100%)';
+
+            // Show the starting screen
+            startingScreen.style.display = 'flex';
+            startingScreen.style.transform = 'translateY(0)';
+
+            // Reset the content to the start screen
+            showContent('start');
         }
     </script>
 </body>
